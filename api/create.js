@@ -16,7 +16,7 @@ module.exports = async(req, res) => {
             msg: "Bad URL kindly recheck url and send again"
         })
     } else { // url is ok 
-        MongoClient.connect(process.env.DB_URL, function(err, db) { // connect with db
+        MongoClient.connect('mongodb+srv://nawdev01:<password>@naw.hdwyqdn.mongodb.net/?retryWrites=true&w=majority', function(err, db) { // connect with db
             if (err) {
                 res.json({
                     status: false,
@@ -59,7 +59,7 @@ module.exports = async(req, res) => {
                                     msg: "Error while write on database"
                                 })
                             } else {
-                                var link = process.env.APP_URL + "/?i=" + result.ops[0].tid;
+                                var link = 'https://url-shorten-api-nine.vercel.app' + "/?i=" + result.ops[0].tid;
                                 res.json({ //if everything goes correct
                                     status: true,
                                     link: link,
