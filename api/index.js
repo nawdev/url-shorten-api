@@ -13,7 +13,7 @@ module.exports = async(req, res) => {
             msg: "Id is required"
         })
     } else { // id is ok 
-        MongoClient.connect('mongodb+srv://nawdev01:<password>@naw.hdwyqdn.mongodb.net/?retryWrites=true&w=majority', function(err, db) { // connect with db
+        MongoClient.connect('mongodb+srv://nawdev01:data123@naw.hdwyqdn.mongodb.net/?retryWrites=true&w=majority', function(err, db) { // connect with db
             if (err) {
                 res.json({
                     status: false,
